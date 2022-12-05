@@ -22,17 +22,14 @@ import ReactDOM from "react-dom/client";
 //     return <h1>Hello, {props.name}</h1>
 // }
 
-function _add( x, y){
-    const result = parseInt(x) + parseInt(y);
-    return result;
-}
+const _add = (x, y) => parseInt(x) + parseInt(y);
 
-function Add(props){
-    return <h1>{props.x} + {props.y} = {_add(props.x, props.y)}</h1>
-}
+const Add = (props) => (
+  <h1>
+    {props.x} + {props.y} = {_add(props.x, props.y)}
+  </h1>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-
-
-root.render(<Add x='6' y = '8'/>)
+root.render(<Add x="6" y="8" />);
