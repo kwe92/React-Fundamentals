@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ListItem from "./ListItem";
 
+// Sorting Components
+
 const List = (props) => {
   const [data, setData] = useState([]);
   const [sortPressed, setSortPressed] = useState(false);
