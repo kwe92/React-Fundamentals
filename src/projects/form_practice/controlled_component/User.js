@@ -2,7 +2,7 @@
 
 // const _rand = () => Math.floor(Math.random() * 9999 + 1000);
 
-// class Employee {
+// class User {
 //   constructor(fname = "", lname = "", email = "") {
 //     this.id = _rand();
 //     this.fname = fname;
@@ -24,4 +24,4 @@
 //   };
 // }
 
-// export default Employee;
+// export default User;

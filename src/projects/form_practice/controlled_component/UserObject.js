@@ -1,6 +1,6 @@
 const _rand = () => Math.floor(Math.random() * 9999 + 1000);
 
-const getEmployeeObj = (fname = "", lname = "", email = "") => {
+const getUserObj = (fname = "", lname = "", email = "") => {
   return {
     id: _rand(),
     fname: fname,
@@ -9,4 +9,4 @@ const getEmployeeObj = (fname = "", lname = "", email = "") => {
   };
 };
 
-export default getEmployeeObj;
+export default getUserObj;
