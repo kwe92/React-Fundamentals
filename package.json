@@ -12,6 +12,7 @@
     "axios": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-scripts": "^2.1.3",
     "web-vitals": "^2.1.4"
   },
@@ -48,7 +49,6 @@
   "main": "postcss.config.js",
   "type": "module",
   "repository": {
-    
     "type": "git",
     "url": "git+https://github.com/kwe92/React-Fundamentals.git"
   },

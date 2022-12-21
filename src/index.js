@@ -6,6 +6,8 @@ import ReactDOM from "react-dom/client";
 // import ControledComponent from "./projects/form_practice/controlled_component/ControlledComponent"; <ControledComponent />
 // import StyledComponents1 from "./projects/styled_components/style1"; <StyledComponents1 />
 import { StyledComponents2 } from "./projects/styled_components/style2";
+import { StyledComponents3 } from "./projects/styled_components/style3";
+
 const _id = document.getElementById("root");
 const root = ReactDOM.createRoot(_id);
 
