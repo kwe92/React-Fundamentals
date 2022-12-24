@@ -28,53 +28,68 @@ export const StyledAppBar = () => {
     const input = event.target.value;
     setUserInput(input);
   };
+
+  const Menu = <styles.StyledGiHamburgerMenu></styles.StyledGiHamburgerMenu>;
+
+  const Logo = (
+    <styles.StyledLogo>
+      <styles.BaseStyledNavLink to="">
+        <h4 name="title">VueMix</h4>
+      </styles.BaseStyledNavLink>
+    </styles.StyledLogo>
+  );
+
+  const Links = (
+    <styles.NavLinkContainer>{buttonLinks}</styles.NavLinkContainer>
+  );
+
+  const InputContainer = (
+    <styles.Wrapper>
+      <styles.StyledInputContainer>
+        <AiOutlineSearch
+          style={{ paddingLeft: "0.5rem", color: "white" }}
+        ></AiOutlineSearch>
+        <styles.StyledInput
+          placeholder="Search…"
+          inputProps={{ "aria-label": "search" }}
+          onChange={handleUserInput}
+          value={userInput}
+        ></styles.StyledInput>
+      </styles.StyledInputContainer>
+    </styles.Wrapper>
+  );
+
+  const CustomSwitch = (
+    <div style={{ flexGrow: 1, paddingLeft: "1rem" }}>
+      {/* Switch Start */}
+      <FormGroup>
+        <FormControlLabel
+          control={<Switch onClick={() => {}} size="small" />}
+          label={
+            <Typography style={{ color: "white", fontSize: "0.75rem" }}>
+              Mode
+            </Typography>
+          }
+        />
+      </FormGroup>
+    </div>
+  );
+
+  const CustomAccountCircle = <styles.StyledAccountCircle />;
+
   return (
     <styles.AppBar>
-      <GiHamburgerMenu
-        style={{ color: "white", padding: "0rem 1rem" }}
-      ></GiHamburgerMenu>
-
+      {Menu}
       {/* Logo Start */}
-      <styles.StyledLogo>
-        <styles.BaseStyledNavLink to="">
-          <h4 name="title">VueMix</h4>
-        </styles.BaseStyledNavLink>
-      </styles.StyledLogo>
-
+      {Logo}
       {/* NavLinks Start */}
-      <styles.NavLinkContainer>{buttonLinks}</styles.NavLinkContainer>
-
+      {Links}
       {/* Search Icon && Input Start */}
-      <styles.Wrapper>
-        <styles.StyledInputContainer>
-          <AiOutlineSearch
-            style={{ paddingLeft: "0.5rem", color: "white" }}
-          ></AiOutlineSearch>
-          <styles.StyledInput
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-            onChange={handleUserInput}
-            value={userInput}
-          ></styles.StyledInput>
-        </styles.StyledInputContainer>
-      </styles.Wrapper>
-      <div style={{ flexGrow: 1 }}>
-        {/* Switch Start */}
-        <FormGroup>
-          <FormControlLabel
-            control={<Switch onClick={() => {}} size="small" />}
-            label={
-              <Typography style={{ color: "white", fontSize: "0.75rem" }}>
-                Mode
-              </Typography>
-            }
-          />
-        </FormGroup>
-      </div>
-
-      <AccountCircle
-        style={{ color: "white", marginRight: "1rem", fontSize: "1rem" }}
-      />
+      {InputContainer}
+      {/* Switch Start */}
+      {CustomSwitch}
+      {/* Account Circle */}
+      {CustomAccountCircle}
     </styles.AppBar>
   );
 };
