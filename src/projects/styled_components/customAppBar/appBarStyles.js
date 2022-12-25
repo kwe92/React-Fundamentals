@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import { HiDotsVertical } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { style } from "@mui/system";
 
 const borderRadius = 0.25;
 
@@ -85,6 +86,10 @@ export const Wrapper = styled.div`
   @media (max-width: 640px) {
     width: 100%;
   }
+
+  @media (max-width: 300px) {
+    width: 20%;
+  }
 `;
 export const StyledInputContainer = styled.div`
   position: relative;
@@ -94,17 +99,13 @@ export const StyledInputContainer = styled.div`
   border-radius: ${borderRadius + "rem"};
   align-items: center;
 
-  // @media (max-width: 820px) {
-  //   width: 14rem;
+  // @media (max-width: 950px) {
+  //   width: 100%;
   // }
 
-  @media (max-width: 640px) {
-    width: 100%;
-  }
-
-  @media (max-width: 950px) {
-    width: 100%;
-  }
+  // @media (max-width: 640px) {
+  //   width: 100%;
+  // }
 
   background: rgb(38, 38, 38);
   caret-color: white;
@@ -136,6 +137,10 @@ const baseIcon = css`
   @media (max-width: 325px) {
     padding-left: 1rem;
   }
+
+  @media (max-width: 450px) {
+    padding-right: 0rem;
+  }
 `;
 
 export const StyledAccountCircle = styled(AccountCircle)`
@@ -143,22 +148,31 @@ export const StyledAccountCircle = styled(AccountCircle)`
 `;
 
 export const StyledHiDotsVertical = styled(HiDotsVertical)`
-  ${baseIcon} // font-size: 1.5rem;
+  ${baseIcon}
 `;
 
+export const GiHamburgerMenuWrapper = styled.div`
+  display: none;
+  @media (max-width: 870px) {
+    padding-left: 1rem;
+    display: inline;
+  }
+  @media (max-width: 450px) {
+    padding-left: 0.5rem;
+  }
+`;
 export const StyledGiHamburgerMenu = styled(GiHamburgerMenu)`
   color: white;
-  display: none;
   font-size: 2rem;
-  @media (max-width: 870px) {
-    padding: 0rem 1rem;
-    display: inline;
+
+  @media (max-width: 350px) {
+    font-size: 1.5rem;
   }
 `;
 
 export const SwitchWrapper = styled.div`
   padding-left: 2rem;
-  @media (max-width: 325px) {
+  @media (max-width: 450px) {
     display: none;
   }
 `;

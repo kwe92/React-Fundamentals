@@ -76,3 +76,7 @@ else console.log("String value:", emptyString);
 const emptyArray = [];
 if (emptyArray.length === 0) console.log("Empty Array");
 else console.log("Array elements:", emptyArray);
+
+const round2 = (x) => parseFloat(x).toFixed(2);
+
+console.log(round2(3.231321321));
