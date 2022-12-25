@@ -1,13 +1,10 @@
-import { GiHamburgerMenu } from "react-icons/gi";
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Switch from "@mui/material/Switch";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Typography } from "@mui/material";
 import * as styles from "./appBarStyles";
-
 const pages = [
   { label: "MOVIES", route: "" },
   { label: "TV SHOWS", route: "bigMind" },
@@ -23,6 +20,9 @@ const buttonLinks = pages.map((page) => {
 
 export const StyledAppBar = () => {
   const [userInput, setUserInput] = useState("");
+  const [accountIcon, setAccountIcon] = useState([
+    <styles.StyledAccountCircle />,
+  ]);
 
   const handleUserInput = (event) => {
     const input = event.target.value;
@@ -60,8 +60,7 @@ export const StyledAppBar = () => {
   );
 
   const CustomSwitch = (
-    <div style={{ flexGrow: 1, paddingLeft: "1rem" }}>
-      {/* Switch Start */}
+    <styles.SwitchWrapper>
       <FormGroup>
         <FormControlLabel
           control={<Switch onClick={() => {}} size="small" />}
@@ -72,10 +71,23 @@ export const StyledAppBar = () => {
           }
         />
       </FormGroup>
-    </div>
+    </styles.SwitchWrapper>
   );
 
-  const CustomAccountCircle = <styles.StyledAccountCircle />;
+  // const CustomAccountCircle = ;
+  //TODO: Need to useEffect for inital render and watch changes to some variable maybe
+  //TODO: Doesnt render properly on the intal device set up like this below
+  const mql = window.matchMedia("(max-width: 800px)");
+  let mobileView = mql;
+  mql.addEventListener("change", (e) => {
+    e.matches
+      ? setAccountIcon([
+          <styles.StyledHiDotsVertical style={{ color: "white" }} />,
+        ])
+      : setAccountIcon([<styles.StyledAccountCircle />]);
+  });
+
+  console.log("mobileView:", mobileView);
 
   return (
     <styles.AppBar>
@@ -89,7 +101,7 @@ export const StyledAppBar = () => {
       {/* Switch Start */}
       {CustomSwitch}
       {/* Account Circle */}
-      {CustomAccountCircle}
+      {accountIcon}
     </styles.AppBar>
   );
 };
