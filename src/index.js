@@ -14,11 +14,13 @@ import { StyledAppBar } from "./projects/styled_components/customAppBar/CustomAp
       <Route path="void" element={<Page3 />}></Route>
     </Routes> */
 ////////////////////////////////////////////////////////////////////////////////
+import { Counter } from "./projects/counter/counter";
 import { BrowserRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { Page1 } from "./projects/styled_components/pages/page1";
 import { Page2 } from "./projects/styled_components/pages/page2";
 import { Page3 } from "./projects/styled_components/pages/page3";
+import RefCounter from "./projects/counter/CounterRef";
 // import { MenuApp } from "./projects/styled_components/dropdown/MenuApp"; <MenuApp />
 
 const ele = document.getElementById("root");
@@ -26,7 +28,12 @@ const ele = document.getElementById("root");
 const root = ReactDOM.createRoot(ele);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <RefCounter />
+  </React.StrictMode>
+);
+
+{
+  /* <BrowserRouter>
       <StyledAppBar />
 
       <Routes>
@@ -34,6 +41,5 @@ root.render(
         <Route path="bigMind" element={<Page2 />}></Route>
         <Route path="void" element={<Page3 />}></Route>
       </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+    </BrowserRouter> */
+}
